@@ -1,0 +1,42 @@
+service: aws-community-day-kenya
+
+provider:
+  name: aws
+  runtime: go1.x
+  region: us-east-1
+
+functions:
+  app:
+    handler: bin/main
+    events:
+      - http:
+          path: /
+          method: get
+      - http:
+          path: /events
+          method: get
+      - http:
+          path: /blogs
+          method: get
+      - http:
+          path: /certifications
+          method: get
+      - http:
+          path: /tickets
+          method: get
+      - http:
+          path: /committee
+          method: get
+
+package:
+  exclude:
+    - node_modules/**
+    - .git/**
+
+plugins:
+  - serverless-go-dep
+
+custom:
+  go:
+    # Add any required Go build flags
+    buildFlags: []
