@@ -41,4 +41,21 @@ Setting Up the Go Server
     serverless deploy
     This command will package your application, deploy it to AWS Lambda, and set up the necessary API Gateway endpoints.
 
-    
+
+    ###################################################################################
+    1. Install AWS CDK and Create a New CDK Project
+    First, install the AWS CDK if you haven't already:
+
+    Copy code
+    npm install -g aws-cdk
+    Create a new CDK project:
+
+    Copy code
+    mkdir aws-community-day-kenya
+    cd aws-community-day-kenya
+    cdk init app --language typescript
+    2. Set Up the Go Lambda Function
+    Create a directory for the Go code inside your CDK project:
+
+    Copy code
+    mkdir -p lambda
