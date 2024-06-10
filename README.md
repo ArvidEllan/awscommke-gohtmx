@@ -59,3 +59,18 @@ Setting Up the Go Server
 
     Copy code
     mkdir -p lambda
+
+    4. Deploy the Application Using CDK
+    First, build your Go code for Linux (as Lambda runs on a Linux environment):
+
+    
+    Copy code
+    cd lambda
+    GOOS=linux GOARCH=amd64 go build -o main
+    cd ..
+    Now, you can deploy the stack using AWS CDK:
+
+   
+    Copy code
+    cdk bootstrap
+    cdk deploy
