@@ -16,15 +16,29 @@ Setting Up the Go Server
 #Set Up the Serverless Framework
     First, you need to install the Serverless Framework if you haven't already:
 
-    sh
-    Copy code
+    
+    #Copy code
     npm install -g serverless
     2. Configure AWS Lambda Functions and API Gateway
     Create a new Serverless service:
 
-    sh
-    Copy code
+    #Copy code
     mkdir aws-community-day-kenya
     cd aws-community-day-kenya
     serverless create --template aws-go-dep --path .
     This command creates the necessary directory structure and files for a Go-based Serverless project.
+
+    #Build and Deploy the Application
+    Build the Go application:
+
+    sh
+    Copy code
+    GOOS=linux GOARCH=amd64 go build -o bin/main
+    Deploy the application using the Serverless Framework:
+
+    sh
+    Copy code
+    serverless deploy
+    This command will package your application, deploy it to AWS Lambda, and set up the necessary API Gateway endpoints.
+
+    
